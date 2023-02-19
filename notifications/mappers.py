@@ -25,8 +25,11 @@ class NotificationMapper(NotificationMapperProtocol):
             return EmailNotification(
                 subject=notification_dto.subject,
                 body=notification_dto.body,
-                to=notification_dto.to,
+                sender_email=notification_dto.sender_email,
+                recipient_email=notification_dto.recipient_email,
                 cc=notification_dto.cc,
+                bcc=notification_dto.bcc,
+                attachments=notification_dto.attachments,
             )
         else:
             raise NotImplementedError(f"No Mapper for {type(notification_dto)} implemented")
