@@ -1,7 +1,8 @@
 from typing import Protocol
 
 from .dto import DiscordWebhookNotificationDTO, EmailNotificationDTO
-from .entities import DiscordWebhookNotification, EmailNotification
+from .entities.discord_webhook_notification import DiscordWebhookNotification
+from .entities.email_notification import EmailNotification
 from .types import AnyNotificationDTOType, AnyNotificationEntityType
 
 

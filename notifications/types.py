@@ -1,7 +1,8 @@
 from typing import TypedDict
 
 from .dto import DiscordWebhookNotificationDTO, EmailNotificationDTO
-from .entities import DiscordWebhookNotification, EmailNotification
+from .entities.discord_webhook_notification import DiscordWebhookNotification
+from .entities.email_notification import EmailNotification
 
 AnyNotificationEntityType = DiscordWebhookNotification | EmailNotification
 AnyNotificationDTOType = DiscordWebhookNotificationDTO | EmailNotificationDTO
