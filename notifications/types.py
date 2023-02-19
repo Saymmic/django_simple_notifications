@@ -1,10 +1,10 @@
 from typing import TypedDict
 
-from .dto import DiscordWebhookNotificationDTO
-from .entities import DiscordWebhookNotification
+from .dto import DiscordWebhookNotificationDTO, EmailNotificationDTO
+from .entities import DiscordWebhookNotification, EmailNotification
 
-AnyNotificationEntityType = DiscordWebhookNotification
-AnyNotificationDTOType = DiscordWebhookNotificationDTO
+AnyNotificationEntityType = DiscordWebhookNotification | EmailNotification
+AnyNotificationDTOType = DiscordWebhookNotificationDTO | EmailNotificationDTO
 
 
 class ReturnSendNotificationType(TypedDict):

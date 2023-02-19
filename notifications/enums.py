@@ -14,6 +14,7 @@ class NotificationStatus(StrEnum):
 
 class NotificationType(StrEnum):
     DISCORD_WEBHOOK = auto()
+    EMAIL = auto()
 
     @classmethod
     def choices(cls) -> list[tuple[str, str]]:
