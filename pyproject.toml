@@ -7,8 +7,10 @@ readme = "README.md"
 packages = [{include = "django_notifications"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11.1"
 django = "^4.1.7"
+pygments = "^2.14.0"
+discord = "^2.1.0"
 
 
 [tool.poetry.group.dev.dependencies]

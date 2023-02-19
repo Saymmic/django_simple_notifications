@@ -1,0 +1,47 @@
+@startuml
+actor Sender
+participant NotificationFacade
+participant NotificationService
+participant NotificationMapper
+participant MediumFactory
+participant NotificationMedium
+participant NotificationRepository
+
+Sender -> NotificationFacade: send notification
+activate NotificationFacade
+
+NotificationFacade -> NotificationService: Send notification
+activate NotificationService
+
+NotificationService -> NotificationMapper: Convert dto to NotificationEntity
+activate NotificationMapper
+
+NotificationService <- NotificationMapper: NotificationEntity
+deactivate NotificationMapper
+
+NotificationService -> MediumFactory: Create medium based on NotificationEntity type
+activate MediumFactory
+
+NotificationService <- MediumFactory: NotificationMedium
+deactivate MediumFactory
+
+NotificationService -> NotificationMedium: Send Notification
+activate NotificationMedium
+
+NotificationService <- NotificationMedium
+deactivate NotificationMedium
+
+NotificationService -> NotificationRepository: Save Notification
+activate NotificationRepository
+
+NotificationService <- NotificationRepository
+deactivate NotificationRepository
+
+
+NotificationFacade <- NotificationService: Return additional info about notification
+deactivate NotificationService
+
+Sender <- NotificationFacade: Return additional info about notification
+deactivate NotificationFacade
+
+@enduml
