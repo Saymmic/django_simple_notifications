@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "django-notifications"
+version = "0.1.0"
+description = ""
+authors = ["michalsimonienko <yqhsms@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_notifications"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "^4.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
