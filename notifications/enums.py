@@ -10,12 +10,3 @@ class NotificationStatus(StrEnum):
     @classmethod
     def choices(cls) -> list[tuple[str, str]]:
         return [(i.name.lower(), i.value.lower()) for i in cls]
-
-
-class NotificationType(StrEnum):
-    DISCORD_WEBHOOK = auto()
-    EMAIL = auto()
-
-    @classmethod
-    def choices(cls) -> list[tuple[str, str]]:
-        return [(i.name.lower(), i.value.lower()) for i in cls]

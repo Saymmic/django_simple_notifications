@@ -11,7 +11,7 @@ from .models import Notification
 
 # Register your models here.
 @admin.register(Notification)
-class NotificationAdmin(admin.ModelAdmin):
+class NotificationHistoryAdmin(admin.ModelAdmin):
     fields = ["uuid", "type", "status", "created_at", "sent_at", "pretty_details"]
     list_display = ["uuid", "type", "status", "created_at", "sent_at"]
     search_fields = ["uuid", "created_at", "sent_at", "details"]
