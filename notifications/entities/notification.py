@@ -37,7 +37,7 @@ class Notification:
             f"type: {self.TYPE} "
             f"status: {self.status} "
             f"created_at: {self.created_at.isoformat()} "
-            f"sent_at: {self.sent_at.isoformat() if self.sent_at else ''}"
+            f"sent_at: {self.sent_at.isoformat() if self.sent_at else 'Not yet'}"
         )
 
     def send(self) -> None:
