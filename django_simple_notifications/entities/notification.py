@@ -1,6 +1,6 @@
 """
 Entities should not depend on anything. But business logic in this project is laser focused
-on sending notifications. Implementing send logic directly on the entity saves us lot
+on sending django_simple_notifications. Implementing send logic directly on the entity saves us lot
 of complexity.
 
 For more details compare it to older commits.
