@@ -10,6 +10,13 @@ class DiscordWebhookNotificationDTO:
 
 
 @dataclass
+class SlackWebhookNotificationDTO:
+    text: str
+    webhook: str
+    blocks: list[dict] | None = None
+
+
+@dataclass
 class EmailNotificationDTO:
     subject: str
     body: str

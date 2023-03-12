@@ -1,8 +1,10 @@
 from typing import Protocol
 
+from . import SlackWebhookNotificationDTO
 from .dto import DiscordWebhookNotificationDTO, EmailNotificationDTO
 from .entities.discord_webhook_notification import DiscordWebhookNotification
 from .entities.email_notification import EmailNotification
+from .entities.slack_webhook_notification import SlackWebhookNotification
 from .types import AnyNotificationDTOType, AnyNotificationEntityType
 
 
@@ -20,6 +22,12 @@ class NotificationMapper(NotificationMapperProtocol):
                 subject=notification_dto.subject,
                 body=notification_dto.body,
                 webhook=notification_dto.webhook,
+            )
+        if isinstance(notification_dto, SlackWebhookNotificationDTO):
+            return SlackWebhookNotification(
+                text=notification_dto.text,
+                webhook=notification_dto.webhook,
+                blocks=notification_dto.blocks,
             )
         if isinstance(notification_dto, EmailNotificationDTO):
             return EmailNotification(

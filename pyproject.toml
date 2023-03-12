@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Simple system for sending notifications."
 authors = ["michalsimonienko <yqhsms@gmail.com>"]
 readme = "README.md"
-packages = [{include = "notifications"}]
+packages = [{include = "django_simple_notifications"}]
 license = "MIT"
 homepage = "https://github.com/Saymmic/django_simple_notifications"
 repository = "https://github.com/Saymmic/django_simple_notifications"
@@ -37,6 +37,7 @@ python = "^3.11.1"
 django = "^4.1.7"
 pygments = "^2.14.0"
 discord = "^2.2.2"
+httpx = "^0.23.3"
 
 
 [tool.poetry.group.dev.dependencies]
